@@ -1,3 +1,4 @@
+//Code in Zusammenarbeit mit Andreas Detering und Sade Babatunde
 const canvas = <HTMLCanvasElement> document.getElementById('pitch'),
  ctx: CanvasRenderingContext2D = canvas.getContext('2d'),
  homePlayerSelect = <any>document.getElementById('selectHomePlayer'),
@@ -666,7 +667,7 @@ function refereeAnimation(): void { //analog
   requestAnimationFrame(refereeAnimation);
 }
 
-function playerAnimation(): void {
+function playerAnimation(): void { //function animates players until one player is at ball
   for (let i = 0; i < activePlayers.length; i++) { //checks every active player
     if (playerMovement(activePlayers[i])) { //check if the player we are currently looking at has reached the ball
       return; //if so: return to exit the function => cancels movements of all players -- note: here only the positions of the players are updated, they are not animated yet
